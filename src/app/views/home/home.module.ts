@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { PPS4AComponent } from 'src/app/sala/pps-4-a/pps-4-a.component';
+import { PPS4BComponent } from 'src/app/sala/pps-4-b/pps-4-b.component';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    PPS4AComponent,
+    PPS4BComponent
   ],
   declarations: [HomePage]
 })

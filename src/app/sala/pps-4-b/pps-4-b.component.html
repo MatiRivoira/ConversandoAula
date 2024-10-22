@@ -1,0 +1,32 @@
+<div class="chat-container">
+    <div *ngIf="showModal" class="modal">
+        <div class="modal-content">
+            <h2>Advertencia</h2>
+            <p>El mensaje no puede tener más de 21 caracteres.</p>
+            <button (click)="showModal = false">Aceptar</button>
+        </div>
+    </div>
+    <div class="mensajes-container" #scrollMe>
+        <div *ngFor="let message of messages | async" class="message-content" [ngClass]="{'my-message-content': message.userEmail === nombreCuenta}">
+            <div class="message-header">
+                <strong *ngIf="message.userEmail === nombreCuenta; else otherUser">
+                    Yo
+                </strong>
+                <ng-template #otherUser>
+                    {{ message.userEmail }}
+                </ng-template>
+            </div>
+            <p>{{ message.text }}</p>
+            <div class="message-time">[{{ message.timestamp | date:'short' }}]</div>
+        </div>        
+    </div>
+    <form (ngSubmit)="sendMessage()" class="message-form">
+        <input type="text" [(ngModel)]="newMessage" name="message" placeholder="Escribe un mensaje" required>
+        <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+            </svg>
+            Enviar
+        </button>
+    </form>
+</div>

@@ -1,0 +1,104 @@
+ion-content {
+  --background: #191820;
+  height: 100vh;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.top-middle, .bottom-middle {
+  width: 100%;
+  height: 50vh; /* Altura inicial */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-middle {
+  position: absolute;
+  top: 0;  // Asegura que el elemento está alineado al fondo
+  width: 100%;
+  transition: height 0.8s ease-in-out; /* Transición para que cualquier cambio manual de altura sea suave */
+}
+
+.top-middle button {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0px 0px 80px 0px;
+  color: #191820;
+  font-size: 50px;
+  font-weight: 900;
+  border: none;
+  transition: height 0.5s ease, top 0.5s ease; /* Ajusta solo la altura y la posición superior */
+}
+
+.bottom-middle {
+  position: absolute;
+  bottom: 0;  // Asegura que el elemento está alineado al fondo
+  width: 100%;
+  transition: height 0.8s ease-in-out;  // Transición suave para la altura
+  background-color: white;
+  border: none;
+  height: 10vh;
+  border-radius: 0px 80px 0px 0px;
+}
+
+.bottom-middle button {
+  background-color: #191820;
+  color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 80px 0px 0px 0px;
+  font-size: 50px;
+  font-weight: 900;
+  border: none;
+  transition: all 0.5s ease; /* Transición suave para todas las propiedades */
+  transition: height 0.5s ease, bottom 0.5s ease; /* Ajusta solo la altura y la posición inferior */
+}
+
+.logout-btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;  /* Posiciona el inicio del botón en el centro */
+  transform: translateX(-50%); /* Desplaza el botón hacia atrás en un 50% de su ancho para centrar exactamente */
+  display: flex; /* Utiliza Flexbox para la alineación del contenido */
+  justify-content: center; /* Centra el contenido horizontalmente dentro del contenedor */
+  align-items: center; /* Centra el contenido verticalmente dentro del contenedor */
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%; /* Opcional: asegura que el botón tenga el ancho total si es necesario */
+  height: 50px; /* Proporciona una altura fija al botón, ajusta según sea necesario */
+  z-index: 3000000;
+
+  i {
+    margin-right: 2px; /* Espacio opcional a la derecha del ícono */
+  }
+}
+
+@keyframes expandHeight {
+  from { height: 50vh; }
+  to { height: 100vh; }
+}
+
+.content-room {
+  position: relative;  /* O absolute si es necesario en tu caso específico */
+  width: 100%;
+  height: 100vh;  /* Asume que deseas que ocupe toda la altura de la ventana */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* Alinea el contenido interior hacia la parte inferior */
+  overflow-y: auto;  /* Permite el desplazamiento si el contenido excede la altura del contenedor */
+}
+
+.btnExit {
+  position: absolute;
+  display: flex;
+  color: #191820;
+  z-index: 10000;
+  background-color: transparent;
+  border: none;
+  top: 23px;
+  left: 40px;
+}

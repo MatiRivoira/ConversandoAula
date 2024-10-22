@@ -1,0 +1,157 @@
+/* Chat */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;  /* Asegúrate de que esta altura sea efectiva */
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    overflow: hidden; /* Esto puede ayudar si hay problemas de desbordamiento */
+}
+
+.mensajes-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse; /* Si deseas que los nuevos mensajes aparezcan abajo */
+    overflow-y: auto;
+    padding: 5px;
+    max-height: 80vh; /* Ajusta esto según los requisitos de tu diseño */
+}
+
+.mensajes-container {
+    scrollbar-width: thin; /* 'auto' o 'thin' */
+    scrollbar-color: #f1f0f0 #ffffff9e; /* color del thumb y color de la pista */
+}
+
+.mensajes-container::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.5); /* Gris claro con 50% de transparencia */
+    border-radius: 10px;
+}
+
+
+
+
+
+/* Chat.component.css */
+.message-content {
+    background-color: #f1f0f0;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    word-wrap: break-word; /* Asegura que los textos largos no desborden */
+    position: relative;
+    max-width: 70%; /* Puedes ajustar esto según necesites */
+    color: #1e1d25;
+}
+
+.my-message-content {
+    background-color: #1e1d25 !important;
+    box-shadow: 0px 0px 6px 0px white; /* Horizontal, Vertical, Blur, Color */
+    align-self: flex-end; /* Alineación a la derecha para el usuario actual */
+    color: rgb(199, 199, 199);
+    width: auto;
+
+    .message-header {
+        color: white !important;
+    }
+}
+
+.my-message-content p, .my-message-content .message-header {
+    margin-right: 120px;
+}
+
+
+.message-header {
+    font-weight: bold;
+    color: #333;
+}
+
+.message-time {
+    font-size: 0.75rem;
+    color: #666;
+    text-align: right;
+    display: block;
+    margin-top: 5px; /* Espacio entre el texto del mensaje y la hora */
+}
+
+
+
+.my-message {
+    align-self: flex-end; /* Alineación a la derecha para el usuario actual */
+}
+
+
+.message-time {
+    font-size: 0.75rem;
+    color: #666;
+    display: block; /* O puedes usar 'inline-block' según prefieras */
+    text-align: right;
+    width: 100%; /* Ocupa toda la anchura del mensaje para alineación */
+}
+
+.message-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.message-form input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: #ffffff;
+    color: #333;
+
+}
+
+.message-form button {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: large;
+    border: none;
+    display: flex;
+    background-color: transparent;
+    padding: 10px 20px;
+    
+    svg {
+        margin-right: 10px;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    color: #1e1d25;
+
+    h2 {
+        margin: 0;
+        font-weight: bolder;
+    }
+
+    button {
+        border-radius: 20px;
+        background-color: #1e1d25;
+        color: white;
+        font: bolder;
+        width: 100%;
+        height: 40px;
+    }
+}
